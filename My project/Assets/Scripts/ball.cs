@@ -10,7 +10,7 @@ public class ball : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        direction = Vector2.down; // (1,1)
+        direction = Vector2.one.normalized;  // (1,1)
     }
 
     // Update is called once per frame
@@ -23,6 +23,19 @@ public class ball : MonoBehaviour
     {
         if (collison.gameObject.CompareTag("paddle"))
             direction.y = -direction.y;
+        else if (collison.gameObject.CompareTag("brick")){
+    
+            direction.y = -direction.y;
+            Destroy(collison.gameObject);
+        }
+
+        else if (collison.gameObject.CompareTag("topWall"))
+            direction.y = -direction.y;
+    
+        else if (collison.gameObject.CompareTag("sideWall"))
+            direction.x=-direction.x;
+
     }
+
 }
 
