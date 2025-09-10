@@ -10,7 +10,7 @@ public class ball : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        direction = Vector2.one.normalized; // (1,1)
+        direction = Vector2.down; // (1,1)
     }
 
     // Update is called once per frame
