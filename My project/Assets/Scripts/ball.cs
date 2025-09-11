@@ -34,6 +34,9 @@ public class ball : MonoBehaviour
     
         else if (collison.gameObject.CompareTag("sideWall"))
             direction.x=-direction.x;
+        
+            else if (collison.gameObject.CompareTag("bottomWall"))
+            Debug.Log("Game over");
 
     }
 
