@@ -13,7 +13,7 @@ public class scoreManager : MonoBehaviour
         {
             score = score + input;
             scoreText.text = score.ToString() + "Points";
-            if (score == 1)
+            if (score == 6)
             { // for testing purpose
                 winText.text = "You Win!";
             }
