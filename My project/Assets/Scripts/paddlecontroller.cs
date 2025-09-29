@@ -18,12 +18,12 @@ public class PaddleController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            if (initial.x <= 12f)
+            if (initial.x <= 8f)
                 initial.x += displacement;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if (initial.x > -12f)
+            if (initial.x > -8f)
                 initial.x -= displacement;
         }
 
