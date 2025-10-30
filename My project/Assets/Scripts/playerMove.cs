@@ -6,12 +6,16 @@ public class Move : MonoBehaviour
     private Vector2 position;
     public float displacement = 0.1f;
     public Animator animator;
+    private SoundManager soundManager;
 
     // Called once before the first frame update
     void Start()
     {
         pad = GetComponent<Rigidbody2D>();
         position = pad.transform.localPosition;
+
+        // Find the SoundManager by tag ("music")
+        soundManager = GameObject.FindGameObjectWithTag("music").GetComponent<SoundManager>();
     }
 
     // Called once per frame
@@ -33,6 +37,14 @@ public class Move : MonoBehaviour
         }
 
         pad.MovePosition(position);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if (collision.gameObject.CompareTag("ouchBrick")){
+            Debug.Log("Stumble Sound");
+            soundManager.PlaySFX(soundManager.stumbleSound);
+        
+        }
     }
 }
 
